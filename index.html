@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Doropdown</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <div class="field">
+      <div class="field__title">Локация</div>
+      <label for="searchInput" class="field__input">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="ЖК, Округ, район, метро"
+          class="field__input-info"
+        />
+        <span id="selectedCount" class="selected-count">0</span>
+      </label>
+      <div id="searchBox" class="field__dropdown">
+        <div class="field__dropdown__tabs">
+          <div class="field__dropdown__tabs-item">
+            <button
+              class="field__tab field__tab--active"
+              onclick="openTab(event, 'zhk')"
+            >
+              ЖК
+            </button>
+            <button class="field__tab" onclick="openTab(event, 'okrug')">
+              Округ
+            </button>
+            <button class="field__tab" onclick="openTab(event, 'rayon')">
+              Район
+            </button>
+            <button class="field__tab" onclick="openTab(event, 'metro')">
+              Метро
+            </button>
+          </div>
+        </div>
+        
+        <div class="field__dropdown__content-tags"></div>
+
+        <div class="wrapper">
+          <div class="overlay"></div>
+          <div class="field__dropdown__content">
+            <div id="zhk" class="field__content field__content--active">
+              <div class="field__content-input">
+                <input type="checkbox" id="checkbox1" class="field__checkbox" />
+                <label for="checkbox1" class="field__label"
+                  >Академический</label
+                >
+              </div>
+              <div class="field__content-input">
+                <input type="checkbox" id="checkbox2" class="field__checkbox" />
+                <label for="checkbox2" class="field__label">Басманный</label>
+              </div>
+              <div class="field__content-input">
+                <input type="checkbox" id="checkbox3" class="field__checkbox" />
+                <label for="checkbox3" class="field__label"
+                  >Замоскворечье</label
+                >
+              </div>
+              <div class="field__content-input">
+                <input type="checkbox" id="checkbox4" class="field__checkbox" />
+                <label for="checkbox4" class="field__label">Измайлово</label>
+              </div>
+              <div class="field__content-input">
+                <input type="checkbox" id="checkbox5" class="field__checkbox" />
+                <label for="checkbox5" class="field__label">Люблино</label>
+              </div>
+              <div class="field__content-input">
+                <input type="checkbox" id="checkbox6" class="field__checkbox" />
+                <label for="checkbox6" class="field__label">Интонация</label>
+              </div>
+              <div class="field__content-input">
+                <input type="checkbox" id="checkbox7" class="field__checkbox" />
+                <label for="checkbox7" class="field__label">Квартал</label>
+              </div>
+            </div>
+
+            <div id="okrug" class="field__content">
+              <div class="field__content-input">
+                <input
+                  type="checkbox"
+                  id="okrugCheckbox1"
+                  name="okrug"
+                  class="field__checkbox"
+                />
+                <label for="okrugCheckbox1" class="field__label"
+                  >Центральный
+                </label>
+              </div>
+
+              <div class="field__content-input">
+                <input
+                  type="checkbox"
+                  id="okrugCheckbox2"
+                  name="okrug"
+                  class="field__checkbox"
+                />
+                <label for="okrugCheckbox2" class="field__label"
+                  >Северный</label
+                >
+              </div>
+              <div class="field__content-input">
+                <input
+                  type="checkbox"
+                  id="okrugCheckbox3"
+                  name="okrug"
+                  class="field__checkbox"
+                />
+                <label for="okrugCheckbox3" class="field__label"
+                  >Восточный
+                </label>
+              </div>
+              <div class="field__content-input">
+                <input
+                  type="checkbox"
+                  id="okrugCheckbox4"
+                  name="okrug"
+                  class="field__checkbox"
+                />
+                <label for="okrugCheckbox4" class="field__label"
+                  >Зеленоградский
+                </label>
+              </div>
+              <div class="field__content-input">
+                <input
+                  type="checkbox"
+                  id="okrugCheckbox5"
+                  name="okrug"
+                  class="field__checkbox"
+                />
+                <label for="okrugCheckbox5" class="field__label"
+                  >Западный
+                </label>
+              </div>
+            </div>
+
+            <div id="rayon" class="field__content">
+              <div class="field__content-input">
+                <input
+                  type="checkbox"
+                  id="rayonCheckbox1"
+                  name="rayon"
+                  class="field__checkbox"
+                />
+                <label for="rayonCheckbox1" class="field__label"
+                  >Замоскворечье
+                </label>
+              </div>
+              <div class="field__content-input">
+                <input
+                  type="checkbox"
+                  id="rayonCheckbox2"
+                  name="rayon"
+                  class="field__checkbox"
+                />
+                <label for="rayonCheckbox2" class="field__label"
+                  >Красносельский
+                </label>
+              </div>
+              <div class="field__content-input">
+                <input
+                  type="checkbox"
+                  id="rayonCheckbox3"
+                  name="rayon"
+                  class="field__checkbox"
+                />
+                <label for="rayonCheckbox3" class="field__label"
+                  >Пресненский
+                </label>
+              </div>
+              <div class="field__content-input">
+                <input
+                  type="checkbox"
+                  id="rayonCheckbox4"
+                  name="rayon"
+                  class="field__checkbox"
+                />
+                <label for="rayonCheckbox4" class="field__label"
+                  >Басманный
+                </label>
+              </div>
+              <div class="field__content-input">
+                <input
+                  type="checkbox"
+                  id="rayonCheckbox5"
+                  name="rayon"
+                  class="field__checkbox"
+                />
+                <label for="rayonCheckbox5" class="field__label">Арбат </label>
+              </div>
+            </div>
+           
+              <div id="metro" class="field__content">
+                <div class="field__content-input">
+                <input
+                  type="checkbox"
+                  id="metroCheckbox1"
+                  class="field__checkbox"
+                />
+                <label for="metroCheckbox1" class="field__label"
+                  >Товарная
+                </label>
+              </div>
+              <div class="field__content-input">
+                <input
+                  type="checkbox"
+                  id="metroCheckbox2"
+                  class="field__checkbox"
+                />
+                <label for="metroCheckbox2" class="field__label">Выхино </label>
+              </div>
+              <div class="field__content-input">
+                <input
+                  type="checkbox"
+                  id="metroCheckbox3"
+                  class="field__checkbox"
+                />
+                <label for="metroCheckbox3" class="field__label">Динамо </label>
+              </div>
+              <div class="field__content-input">
+                <input
+                  type="checkbox"
+                  id="metroCheckbox4"
+                  class="field__checkbox"
+                />
+                <label for="metroCheckbox4" class="field__label"
+                  >Добрынинская
+                </label>
+              </div>
+              <div class="field__content-input">
+                <input
+                  type="checkbox"
+                  id="metroCheckbox5"
+                  class="field__checkbox"
+                />
+                <label for="metroCheckbox5" class="field__label"
+                  >Дмитровская
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
